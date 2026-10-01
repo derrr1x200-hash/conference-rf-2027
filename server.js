@@ -26,9 +26,11 @@ app.get("/register", (req, res) => {
   <input name="login" placeholder="Логин" /><br />
   <input name="FIO" placeholder="ФИО" /><br />
   <input name="tel" placeholder="Номер Телефона" /><br />
+  <input name="city" placeholder="Город" /><br />
   <input name="email" placeholder="Электронная почта" /><br />
   <input name="password" type="password" placeholder="Пароль" /><br />
   <button>Создать пользователя</button>
+  <button type="reset">Очистить форму</button>
   `);
 });
 
@@ -37,7 +39,7 @@ app.post("/register", (req, res) => {
     Пользователь ${req.body.login} зарегистрирован<br>
     ФИО Пользователя ${req.body.FIO}<br>
     Телефон Пользователя ${req.body.tel}<br>
-    Почта Пользователя ${req.body.email}
+    Почта Пользователя ${req.body.email}<br>
+    Город Пользователя ${req.body.city}
     `);
 });
-
