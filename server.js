@@ -11,9 +11,14 @@ app.listen(PORT, () => {
 });
 
 
-app.get("/about", (req, res) => res.send("О портале"));
+app.get("/about", (req, res) => res.send(`<h1>О портале</h1>
+        <p>Добро пожаловать на наш сайт!</p>`));
 
 app.get("/contact", (req, res) => res.send("Контакты"));
+
+app.get("/help", (req, res) => res.send("Помощь"));
+
+app.get("/rooms", (req, res) => res.send("Список помещений"));
 
 app.get("/register", (req, res) => {
   res.send(`
