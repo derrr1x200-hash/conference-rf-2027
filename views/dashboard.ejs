@@ -1,0 +1,14 @@
+<h1><%= title %></h1>
+
+<% if (errors.length) { %>
+    <ul>
+        <% errors.forEach(e=>  { %>
+            <li><%= e %></li>
+
+    <%    })  %>
+    </ul>
+
+<% } %>
+
+
+<h2>Список заявок</h2>

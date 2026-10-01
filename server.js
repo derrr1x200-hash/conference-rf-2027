@@ -2,6 +2,9 @@ import express from "express";
 const app = express();
 const PORT = 3000;
 
+app.set("view engine", "ejs");
+app.set("views", "./views");
+
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => res.send("Конференции.РФ"));
@@ -21,18 +24,22 @@ app.get("/help", (req, res) => res.send("Помощь"));
 app.get("/rooms", (req, res) => res.send("Список помещений"));
 
 app.get("/register", (req, res) => {
-  res.send(`
-    <form method="POST" action="/register">
-  <input name="login" placeholder="Логин" /><br />
-  <input name="FIO" placeholder="ФИО" /><br />
-  <input name="tel" placeholder="Номер Телефона" /><br />
-  <input name="city" placeholder="Город" /><br />
-  <input name="email" placeholder="Электронная почта" /><br />
-  <input name="password" type="password" placeholder="Пароль" /><br />
-  <button>Создать пользователя</button>
-  <button type="reset">Очистить форму</button>
-  `);
+  res.render("register", 
+    { title: "Регистрация на портале", 
+      errors: [] });
 });
+
+
+app.get("/login", (req, res) => {
+  res.render("login", { title: "Вход на портал", 
+    errors: [] });
+});
+
+app.get("/dashboard", (req, res) => {
+  res.render("dashboard", { title: "Личный кабинет", 
+    errors: [] });
+});
+
 
 app.post("/register", (req, res) => {
   res.send(`
