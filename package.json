@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "name": "conference-rf-2027",
+  "version": "1.0.0",
+  "description": "",
+  
+  "main": "index.js",
+  "scripts": { "start": "node server.js" },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {}
+}
